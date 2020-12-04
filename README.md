@@ -11,3 +11,14 @@
     - Select the _Git_ type
     - Project repository: `https://github.com/cicd-draft/pipeline-library-demo.git`
     - Credentials: (leave blank)
+
+
+
+## Groovy script usage  example
+
+```groovy
+@Library('shared-lib') _
+
+log.info 'Starting'
+log.warn 'Nothing to do!'
+```
