@@ -16,6 +16,27 @@
 
 ## Groovy script usage  example
 
+create a pipeline job ,use `Pipeline script`,then paste below context to the box.
+
+use `logWithColor.groovy` function
+
+```groovy
+@Library('pipeline-library-demo')_
+
+node() {
+ timestamps {
+    ansiColor('xterm'){
+         echo "ehllo"
+         logWithColor.info "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+         logWithColor.error "Praesent cursus orci sed lectus aliquet pretium."
+
+    }
+ }
+}
+```
+
+use `withDBCredential.groovy` function
+
 ```groovy
 @Library('shared-lib') _
 
