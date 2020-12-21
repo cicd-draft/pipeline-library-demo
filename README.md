@@ -35,11 +35,22 @@ node() {
 }
 ```
 
-use `withDBCredential.groovy` function
+use `withDBCredential.groovy` function, before you run the job ,you need to create a crendential name `Some-DB-user-pwd`, give the username and password to the crendential.
 
 ```groovy
-@Library('shared-lib') _
+@Library('pipeline-library-demo')_
 
-log.info 'Starting'
-log.warn 'Nothing to do!'
+pipeline{
+    agent any
+    
+    stages{
+        stage("One"){
+            steps {
+                withDBCredential{
+                    sh "echo $USER >> tmpfile"
+                }
+            }
+        }
+    }
+}
 ```
